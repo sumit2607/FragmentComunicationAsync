@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">CustomerPage</string>
-    <string-array name="SelectManufacturer">
-        <item>abdce</item>
-        <item>dfdkf</item>
-        <item>tejfdj</item>
-    </string-array>
-</resources>

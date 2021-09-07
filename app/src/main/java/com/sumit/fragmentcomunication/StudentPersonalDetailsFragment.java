@@ -16,8 +16,7 @@ import android.widget.EditText;
 
 public class StudentPersonalDetailsFragment extends Fragment {
 
-private Button mbtnNext;
-private EditText mEtName;
+    private EditText mEtName;
 private EditText mEtAge;
 private  ComunicationListner listner;
 
@@ -42,21 +41,18 @@ private  ComunicationListner listner;
     }
 
     private void intitView(View view) {
-        mbtnNext = view.findViewById(R.id.btnNext);
+        Button mbtnNext = view.findViewById(R.id.btnNext);
         mEtName = view.findViewById(R.id.etStudentName);
         mEtAge = view.findViewById(R.id.etStudentAge);
-        mbtnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               String name = mEtName.getText().toString();
-               int age = Integer.parseInt(mEtAge.getText().toString());
-               Bundle bundle = new Bundle();
-               bundle.putString("name" , name);
-               bundle.putInt("age", age);
-               if(listner!=null){
-                   listner.launchPerformanceFragment(bundle);
-               }
-            }
+        mbtnNext.setOnClickListener(view1 -> {
+           String name = mEtName.getText().toString();
+           int age = Integer.parseInt(mEtAge.getText().toString());
+           Bundle bundle = new Bundle();
+           bundle.putString("name" , name);
+           bundle.putInt("age", age);
+           if(listner!=null){
+               listner.launchPerformanceFragment(bundle);
+           }
         });
     }
 }

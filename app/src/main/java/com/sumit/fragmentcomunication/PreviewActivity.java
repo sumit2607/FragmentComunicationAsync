@@ -2,6 +2,7 @@ package com.sumit.fragmentcomunication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -16,18 +17,20 @@ private TextView mTvname, mtvage, mtvgrade, mtvper;
         getDataModel();
     }
 
+
     private void getDataModel() {
         ModelClass modelClass  =  (ModelClass) getIntent().getSerializableExtra("modelClass");
         mTvname.setText(modelClass.getName());
-        mtvage.setText(modelClass.getAge()+ "");
+        mtvage.setText(modelClass.getAge() + " ");
         mtvgrade.setText(modelClass.getGrade());
         mtvper.setText(modelClass.getPercentage());
     }
 
     private void initview() {
         mTvname = findViewById(R.id.tvStudentName);
-        mtvage = findViewById(R.id.etStudentPercentage);
-        mtvgrade = findViewById(R.id.btnPreview);
-        mtvper =findViewById(R.id.btnPreview);
+        mtvage = findViewById(R.id.tvStudentAge);
+        mtvgrade = findViewById(R.id.tvStudentGrade);
+        mtvper =findViewById(R.id.tvStudentPercentage);
+        //mtvper =findViewById(R.id.btnPreview);
     }
 }
